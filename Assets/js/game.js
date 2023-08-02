@@ -53,6 +53,8 @@ startGame = () => {
 getNewQuestion = () => {
   // If all the questions have been answered or user has answered all the questions I want them to go to the end page.
   if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+    // Save Score at the end of the game in LocalStorage
+    localStorage.setItem("mostRecentScore", score);
     // Go to the end page
     return window.location.assign("/end.html");
   }
